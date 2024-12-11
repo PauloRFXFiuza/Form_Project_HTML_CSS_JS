@@ -8,7 +8,7 @@ const passwordConfirmation = document.getElementById("password-confirmation");
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    alert("Cadastrado com Sucesso.");
+    /*alert("Cadastrado com Sucesso.");*/
     checkInputUsername();
 })
 
@@ -27,6 +27,9 @@ function checkInputUsername(){
 
     if(usernameValue === ""){
         errorInput(username, "Favor Inserir. Preenchimento Obrigatório.")
+    }else{
+        const formItem = username.parentElement;
+        formItem.classList = "form-content"
     }
 
 }
