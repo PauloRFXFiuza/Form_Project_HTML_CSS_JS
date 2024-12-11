@@ -8,11 +8,7 @@ const passwordConfirmation = document.getElementById("password-confirmation");
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    /*alert("Cadastrado com Sucesso.");*/
-    checkInputUsername();
-    checkInputEmail();
-    checkInputPassword();
-    checkInputPasswordConfirmation();
+    checkForm();
 })
 
 function errorInput(input, message){
@@ -84,6 +80,29 @@ function checkInputPasswordConfirmation(){
         formItem.className = "form-content";
     }
 
+}
+
+function checkForm(){
+    checkInputUsername();
+    checkInputEmail();
+    checkInputPassword();
+    checkInputPasswordConfirmation();
+
+    const formItems = form.querySelectorAll(".form-content");
+
+    const isValid = [...formItems].every( (item) =>{
+        return item.className === "form-content"
+    });
+
+    if(isValid === true){
+        alert("Cadastrado com Sucesso.");
+    }else{
+        alert("Cadastro não Efetuado. Favor Preencher Dados Corretamente.");
+    }
+    /* Apenas para testar se está funcionando
+    console.log(isValid);
+    */
+    
 }
 
 /* 
