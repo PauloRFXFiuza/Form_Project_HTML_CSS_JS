@@ -1,1 +1,3 @@
-/*alert("TESTEEEEEEEEEEEEEEE");*/
+/* alert("TESTEEEEEEEEEEEEEEE"); */
+
+const form = document.getElementsById("form");
