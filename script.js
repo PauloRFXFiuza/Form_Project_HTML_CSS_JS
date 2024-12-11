@@ -9,4 +9,9 @@ const passwordConfirmation = document.getElementsById("password-confirmation");
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     alert("Cadastrado com Sucesso.")
-})
+});
+
+function checkInputUsername(){
+    const usernameValue = username.value;
+    console.log(usernameValue);
+};
