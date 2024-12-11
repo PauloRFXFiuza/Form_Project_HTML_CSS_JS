@@ -70,4 +70,15 @@ body{
     border-radius: 14px;
     padding: 10px;
     border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 14px;
+}
+
+.form-content.error input{
+    border-color: #ff3b25;
+}
+
+.form-content.error a{
+    color: #ff3b25;
 }
