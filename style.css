@@ -32,3 +32,13 @@ body{
     text-align: center;
     color: #FFF;
 }
+
+.form{
+    padding: 18px;
+}
+
+.form-content{
+    margin-bottom: 8px;
+    padding-bottom: 18px;
+    position: relative;
+}
