@@ -11,6 +11,19 @@ form.addEventListener("submit", (event) => {
     checkForm();
 })
 
+username.addEventListener("blur", () =>{
+    checkInputUsername();
+})
+email.addEventListener("blur", () =>{
+    checkInputEmail();
+})
+password.addEventListener("blur", () =>{
+    checkInputPassword();
+})
+passwordConfirmation.addEventListener("blur", () =>{
+    checkInputPasswordConfirmation();
+})
+
 function errorInput(input, message){
     const formItem = input.parentElement;
     const textMessage = formItem.querySelector("a");
