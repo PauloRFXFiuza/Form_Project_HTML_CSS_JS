@@ -65,10 +65,11 @@ function checkInputEmail(){
     }
 
 }
-
 function checkInputTelephone(){
     const telephoneValue = telephone.value;
-    /* Apenas para testar se está funcionando 
+    
+    /*
+    Apenas para testar se está funcionando 
     console.log(usernameValue);
     */
 
