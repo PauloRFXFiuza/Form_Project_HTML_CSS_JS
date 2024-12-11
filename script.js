@@ -1,17 +1,18 @@
 /* alert("TESTEEEEEEEEEEEEEEE"); */
 
-const form = document.getElementsById("form");
-const username = document.getElementsById("username");
-const email = document.getElementsById("email");
-const password = document.getElementsById("password");
-const passwordConfirmation = document.getElementsById("password-confirmation");
+const form = document.getElementById("form");
+const username = document.getElementById("username");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const passwordConfirmation = document.getElementById("password-confirmation");
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    alert("Cadastrado com Sucesso.")
-});
+    alert("Cadastrado com Sucesso.");
+    checkInputUsername();
+})
 
 function checkInputUsername(){
     const usernameValue = username.value;
     console.log(usernameValue);
-};
+}
