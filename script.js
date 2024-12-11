@@ -12,6 +12,7 @@ form.addEventListener("submit", (event) => {
     checkInputUsername();
     checkInputEmail();
     checkInputPassword();
+    checkInputPasswordConfirmation();
 })
 
 function errorInput(input, message){
@@ -30,7 +31,7 @@ function checkInputUsername(){
     */
 
     if(usernameValue === ""){
-        errorInput(username, "Favor Inserir. Preenchimento Obrigatório.")
+        errorInput(username, "Favor Inserir. Preenchimento Obrigatório.");
     }else{
         const formItem = username.parentElement;
         formItem.className = "form-content";
@@ -44,7 +45,7 @@ function checkInputEmail(){
     console.log(emailValue);
     */
     if(emailValue === ""){
-        errorInput(email, "Favor Inserir. Preenchimento Obrigatório.")
+        errorInput(email, "Favor Inserir. Preenchimento Obrigatório.");
     }else{
         const formItem = email.parentElement;
         formItem.className = "form-content";
@@ -58,11 +59,28 @@ function checkInputPassword(){
     console.log(passwordValue);
     */
     if(passwordValue === ""){
-        errorInput(password, "Favor Inserir. Preenchimento Obrigatório.")
+        errorInput(password, "Favor Inserir. Preenchimento Obrigatório.");
     }else if(passwordValue.length < 8){
-        errorInput(password, "A senha necessita ter, no mínimo, 8 caracteres.")
+        errorInput(password, "A senha necessita ter, no mínimo, 8 caracteres.");
     }else{
         const formItem = password.parentElement;
+        formItem.className = "form-content";
+    }
+
+}
+
+function checkInputPasswordConfirmation(){
+    const passwordValue = password.value;
+    const passwordConfirmationValue = passwordConfirmation.value;
+    /* Apenas para testar se está funcionando 
+    console.log(passwordValue);
+    */
+    if(passwordConfirmationValue === ""){
+        errorInput(passwordConfirmation, "Favor Inserir. Confirmação de Senha Obrigatória.")
+    }else if(passwordConfirmationValue !== passwordValue){
+        errorInput(passwordConfirmation, "As Senhas Inseridas Não São Iguais. Favor Inserir Novamente a Senha e a Confirmação de Senha.")
+    }else{
+        const formItem = passwordConfirmation.parentElement;
         formItem.className = "form-content";
     }
 
