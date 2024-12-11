@@ -3,6 +3,7 @@
 const form = document.getElementById("form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
+const telephone = document.getElementById("telephone");
 const password = document.getElementById("password");
 const passwordConfirmation = document.getElementById("password-confirmation");
 
@@ -16,6 +17,9 @@ username.addEventListener("blur", () =>{
 })
 email.addEventListener("blur", () =>{
     checkInputEmail();
+})
+telephone.addEventListener("blur", () =>{
+    checkInputTelephone();
 })
 password.addEventListener("blur", () =>{
     checkInputPassword();
@@ -62,6 +66,21 @@ function checkInputEmail(){
 
 }
 
+function checkInputTelephone(){
+    const telephoneValue = telephone.value;
+    /* Apenas para testar se está funcionando 
+    console.log(usernameValue);
+    */
+
+    if(telephoneValue === ""){
+        errorInput(telephone, "Favor Inserir. Preenchimento Obrigatório.");
+    }else{
+        const formItem = telephone.parentElement;
+        formItem.className = "form-content";
+    }
+
+}
+
 function checkInputPassword(){
     const passwordValue = password.value;
     /* Apenas para testar se está funcionando 
@@ -98,6 +117,7 @@ function checkInputPasswordConfirmation(){
 function checkForm(){
     checkInputUsername();
     checkInputEmail();
+    checkInputTelephone();
     checkInputPassword();
     checkInputPasswordConfirmation();
 
