@@ -1,5 +1,10 @@
 /* alert("TESTEEEEEEEEEEEEEEE"); */
 
+function isValidNumber(input) {
+    const regex = /^\d{11}$/; // Apenas 11 dígitos numéricos
+    return regex.test(input);
+}
+
 const form = document.getElementById("form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
@@ -67,19 +72,16 @@ function checkInputEmail(){
 }
 function checkInputTelephone(){
     const telephoneValue = telephone.value;
-    
-    /*
-    Apenas para testar se está funcionando 
-    console.log(usernameValue);
-    */
 
-    if(telephoneValue === ""){
-        errorInput(telephone, "Favor Inserir. Preenchimento Obrigatório.");
+    if(isValidNumber(telephoneValue) === false){
+        errorInput(telephone, "Favor Inserir um número de telefone correto. Preenchimento Obrigatório.");
     }else{
         const formItem = telephone.parentElement;
         formItem.className = "form-content";
     }
-
+    /*
+    console.log(telephoneValue + "=" + isValidNumber(telephoneValue));
+    */
 }
 
 function checkInputPassword(){
@@ -140,6 +142,11 @@ function checkForm(){
     */
     
 }
+
+
+const input1 = "12312312311"; // válido
+console.log(input1 + "=" + isValidNumber(input1));
+
 
 /* 
 Função errorInput
