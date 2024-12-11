@@ -23,20 +23,48 @@ function errorInput(input, message){
 
 function checkInputUsername(){
     const usernameValue = username.value;
+    /* Apenas para testar se está funcionando 
     console.log(usernameValue);
+    */
 
     if(usernameValue === ""){
         errorInput(username, "Favor Inserir. Preenchimento Obrigatório.")
     }else{
         const formItem = username.parentElement;
-        formItem.classList = "form-content"
+        formItem.className = "form-content";
     }
 
 }
 
+function checkInputEmail(){
+    const emailValue = email.value;
+    /* Apenas para testar se está funcionando 
+    console.log(emailValue);
+    */
+    if(emailValue === ""){
+        errorInput(email, "Favor Inserir. Preenchimento Obrigatório.")
+    }else{
+        const formItem = email.parentElement;
+        formItem.className = "form-content";
+    }
 
+}
 
+function checkInputPassword(){
+    const passwordValue = password.value;
+    /* Apenas para testar se está funcionando 
+    console.log(passwordValue);
+    */
+    if(passwordValue === ""){
+        errorInput(password, "Favor Inserir. Preenchimento Obrigatório.")
+    }else if(password.length < 8){
+        errorInput(password, "A senha necessita ter, no mínimo, 8 caracteres.");
+    }else{
+        const formItem = password.parentElement;
+        formItem.className = "form-content";
+    }
 
+}
 
 /* 
 Função errorInput
