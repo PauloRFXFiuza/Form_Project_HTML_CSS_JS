@@ -10,6 +10,8 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
     /*alert("Cadastrado com Sucesso.");*/
     checkInputUsername();
+    checkInputEmail();
+    checkInputPassword();
 })
 
 function errorInput(input, message){
@@ -57,8 +59,8 @@ function checkInputPassword(){
     */
     if(passwordValue === ""){
         errorInput(password, "Favor Inserir. Preenchimento Obrigatório.")
-    }else if(password.length < 8){
-        errorInput(password, "A senha necessita ter, no mínimo, 8 caracteres.");
+    }else if(passwordValue.length < 8){
+        errorInput(password, "A senha necessita ter, no mínimo, 8 caracteres.")
     }else{
         const formItem = password.parentElement;
         formItem.className = "form-content";
