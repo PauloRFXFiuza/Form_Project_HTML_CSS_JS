@@ -144,10 +144,6 @@ function checkForm(){
 }
 
 
-const input1 = "12312312311"; // válido
-console.log(input1 + "=" + isValidNumber(input1));
-
-
 /* 
 Função errorInput
 A função errorInput em JavaScript é projetada para manipular a 
