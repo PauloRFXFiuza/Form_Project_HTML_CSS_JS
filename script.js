@@ -12,13 +12,6 @@ form.addEventListener("submit", (event) => {
     checkInputUsername();
 })
 
-function checkInputUsername(){
-    const usernameValue = username.value;
-    console.log(usernameValue);
-
-
-}
-
 function errorInput(input, message){
     const formItem = input.parentElement;
     const textMessage = formItem.querySelector("a");
@@ -27,6 +20,18 @@ function errorInput(input, message){
 
     formItem.className = "form-content error";
 }
+
+function checkInputUsername(){
+    const usernameValue = username.value;
+    console.log(usernameValue);
+
+    if(usernameValue === ""){
+        errorInput(username, "Favor Inserir. Preenchimento Obrigatório.")
+    }
+
+}
+
+
 
 
 
