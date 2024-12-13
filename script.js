@@ -276,7 +276,7 @@ function checkForm(){
     if(isValid === true){
         alert("Cadastrado com Sucesso.");
         /*Comando abaixo atualiza a página utilizando o cache do navegador*/
-        location.reload(false);
+        /*location.reload(false);*/
     }else{
         alert("Cadastro não Efetuado. Favor Preencher Dados Corretamente.");
     }
@@ -307,7 +307,7 @@ function enviarFormulario() {
         cpf: cpf.value,
         senha: password.value,
     };
-
+    console.log(dadosUsuario);
     fetch("http://localhost:3000/cadastrar", {
         method: "POST",
         headers: {
