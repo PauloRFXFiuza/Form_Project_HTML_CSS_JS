@@ -5,6 +5,11 @@ function isValidNumber(input) {
     return regex.test(input);
 }
 
+function isValidNumber2(input) {
+    const regex = /^\d{9}$/; // Apenas 9 dígitos numéricos
+    return regex.test(input);
+}
+
 const form = document.getElementById("form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
@@ -85,6 +90,20 @@ function checkInputTelephone(){
         errorInput(telephone, "Favor Inserir um número de telefone correto. Preenchimento Obrigatório.");
     }else{
         const formItem = telephone.parentElement;
+        formItem.className = "form-content";
+    }
+    /*
+    console.log(telephoneValue + "=" + isValidNumber(telephoneValue));
+    */
+}
+
+function checkInputRG(){
+    const rgValue = rg.value;
+
+    if(isValidNumber2(rgValue) === false){
+        errorInput(rg, "Favor Inserir um número de RG correto. Preenchimento Obrigatório.");
+    }else{
+        const formItem = rg.parentElement;
         formItem.className = "form-content";
     }
     /*
