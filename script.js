@@ -15,6 +15,11 @@ function isValidNumber3(input) {
     return regex.test(input);
 }
 
+function isValidNumber4(input) {
+    const regex = /^\d{1,6}$/; // Apenas 1 a 6 dígitos numéricos - nº de residência
+    return regex.test(input);
+}
+
 const form = document.getElementById("form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
