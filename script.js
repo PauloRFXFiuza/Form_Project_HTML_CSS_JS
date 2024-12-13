@@ -178,6 +178,18 @@ function checkInputMunicipio(){
 
 }
 
+function checkInputUF(){
+    const ufValue = uf.value;
+
+    if(ufValue === ""){
+        errorInput(uf, "Favor Selecionar a UF de Sua Residência. Preenchimento Obrigatório.");
+    }else{
+        const formItem = uf.parentElement;
+        formItem.className = "form-content";
+    }
+
+}
+
 function checkInputCEP(){
     const cepValue = cep.value;
 
