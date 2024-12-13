@@ -119,6 +119,7 @@ function checkInputEmail(){
     }
 
 }
+
 function checkInputTelephone(){
     const telephoneValue = telephone.value;
 
@@ -151,6 +152,30 @@ function checkInputNumeroResidencia(){
         const formItem = numeroResidencia.parentElement;
         formItem.className = "form-content";
     }
+}
+
+function checkInputBairro(){
+    const bairroValue = bairro.value;
+
+    if(bairroValue === ""){
+        errorInput(bairro, "Favor Inserir. Preenchimento Obrigatório.");
+    }else{
+        const formItem = bairro.parentElement;
+        formItem.className = "form-content";
+    }
+
+}
+
+function checkInputMunicipio(){
+    const municipioValue = municipio.value;
+
+    if(municipioValue === ""){
+        errorInput(municipio, "Favor Inserir. Preenchimento Obrigatório.");
+    }else{
+        const formItem = municipio.parentElement;
+        formItem.className = "form-content";
+    }
+
 }
 
 function checkInputCEP(){
