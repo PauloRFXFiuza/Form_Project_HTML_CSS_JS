@@ -66,9 +66,6 @@ function errorInput(input, message){
 
 function checkInputUsername(){
     const usernameValue = username.value;
-    /* Apenas para testar se está funcionando 
-    console.log(usernameValue);
-    */
 
     if(usernameValue === ""){
         errorInput(username, "Favor Inserir. Preenchimento Obrigatório.");
@@ -81,9 +78,7 @@ function checkInputUsername(){
 
 function checkInputEmail(){
     const emailValue = email.value;
-    /* Apenas para testar se está funcionando 
-    console.log(emailValue);
-    */
+
     if(emailValue === ""){
         errorInput(email, "Favor Inserir. Preenchimento Obrigatório.");
     }else{
