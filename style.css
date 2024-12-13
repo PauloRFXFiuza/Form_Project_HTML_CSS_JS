@@ -59,7 +59,7 @@ body{
     width: 100%;
     border-radius: 8px;
     padding: 8px;
-    border: 2px solid #f241f2;
+    border: 1px solid #f241f2;
     color: #f0ffffde;
     background: #514869;
     box-shadow: 0 10px 40px #00000056;
@@ -95,7 +95,7 @@ body{
 }
 
 .form-content.error input{
-    border-color: #ff3b25;
+    border: solid 2px #ff3b25; 
 }
 
 .form-content.error a{
