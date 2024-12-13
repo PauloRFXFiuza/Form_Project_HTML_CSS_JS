@@ -1,12 +1,12 @@
 /* alert("TESTEEEEEEEEEEEEEEE"); */
 
 function isValidNumber(input) {
-    const regex = /^\d{11}$/; // Apenas 11 dígitos numéricos
+    const regex = /^\d{11}$/; // Apenas 11 dígitos numéricos - CPF, telefobe
     return regex.test(input);
 }
 
 function isValidNumber2(input) {
-    const regex = /^\d{9}$/; // Apenas 9 dígitos numéricos
+    const regex = /^\d{9}$/; // Apenas 9 dígitos numéricos - RG
     return regex.test(input);
 }
 
@@ -161,6 +161,8 @@ function checkForm(){
     checkInputUsername();
     checkInputEmail();
     checkInputTelephone();
+    checkInputRG();
+    checkInputCPF();
     checkInputPassword();
     checkInputPasswordConfirmation();
 
