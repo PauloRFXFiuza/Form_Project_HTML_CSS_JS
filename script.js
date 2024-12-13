@@ -9,6 +9,8 @@ const form = document.getElementById("form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const telephone = document.getElementById("telephone");
+const rg = document.getElementById("RG");
+const cpf = document.getElementById("CPF");
 const password = document.getElementById("password");
 const passwordConfirmation = document.getElementById("password-confirmation");
 
@@ -25,6 +27,12 @@ email.addEventListener("blur", () =>{
 })
 telephone.addEventListener("blur", () =>{
     checkInputTelephone();
+})
+rg.addEventListener("blur", () =>{
+    checkInputRG();
+})
+cpf.addEventListener("blur", () =>{
+    checkInputCPF();
 })
 password.addEventListener("blur", () =>{
     checkInputPassword();
@@ -84,6 +92,19 @@ function checkInputTelephone(){
     */
 }
 
+function checkInputCPF(){
+    const cpfValue = cpf.value;
+
+    if(isValidNumber(cpfValue) === false){
+        errorInput(cpf, "Favor Inserir um número de CPF correto. Preenchimento Obrigatório.");
+    }else{
+        const formItem = cpf.parentElement;
+        formItem.className = "form-content";
+    }
+    /*
+    console.log(telephoneValue + "=" + isValidNumber(telephoneValue));
+    */
+}
 function checkInputPassword(){
     const passwordValue = password.value;
     /* Apenas para testar se está funcionando 
