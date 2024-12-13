@@ -94,7 +94,7 @@ body{
     letter-spacing: 3px;
 }
 
-.form-content.error input{
+.form-content.error input,select{
     border: solid 2px #ff3b25; 
 }
 
