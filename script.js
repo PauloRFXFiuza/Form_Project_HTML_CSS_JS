@@ -10,10 +10,16 @@ function isValidNumber2(input) {
     return regex.test(input);
 }
 
+function isValidNumber3(input) {
+    const regex = /^\d{8}$/; // Apenas 8 dígitos numéricos - CEP
+    return regex.test(input);
+}
+
 const form = document.getElementById("form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const telephone = document.getElementById("telephone");
+const cep = document.getElementById("CEP");
 const rg = document.getElementById("RG");
 const cpf = document.getElementById("CPF");
 const password = document.getElementById("password");
@@ -32,6 +38,9 @@ email.addEventListener("blur", () =>{
 })
 telephone.addEventListener("blur", () =>{
     checkInputTelephone();
+})
+cep.addEventListener("blur", () =>{
+    checkInputCEP();
 })
 rg.addEventListener("blur", () =>{
     checkInputRG();
@@ -92,9 +101,17 @@ function checkInputTelephone(){
         const formItem = telephone.parentElement;
         formItem.className = "form-content";
     }
-    /*
-    console.log(telephoneValue + "=" + isValidNumber(telephoneValue));
-    */
+}
+
+function checkInputCEP(){
+    const cepValue = cep.value;
+
+    if(isValidNumber3(cepValue) === false){
+        errorInput(cep, "Favor Inserir um número de CEP correto. Preenchimento Obrigatório.");
+    }else{
+        const formItem = cep.parentElement;
+        formItem.className = "form-content";
+    }
 }
 
 function checkInputRG(){
@@ -106,9 +123,6 @@ function checkInputRG(){
         const formItem = rg.parentElement;
         formItem.className = "form-content";
     }
-    /*
-    console.log(telephoneValue + "=" + isValidNumber(telephoneValue));
-    */
 }
 
 function checkInputCPF(){
@@ -120,15 +134,11 @@ function checkInputCPF(){
         const formItem = cpf.parentElement;
         formItem.className = "form-content";
     }
-    /*
-    console.log(telephoneValue + "=" + isValidNumber(telephoneValue));
-    */
+
 }
 function checkInputPassword(){
     const passwordValue = password.value;
-    /* Apenas para testar se está funcionando 
-    console.log(passwordValue);
-    */
+
     if(passwordValue === ""){
         errorInput(password, "Favor Inserir. Preenchimento Obrigatório.");
     }else if(passwordValue.length < 8){
@@ -143,9 +153,7 @@ function checkInputPassword(){
 function checkInputPasswordConfirmation(){
     const passwordValue = password.value;
     const passwordConfirmationValue = passwordConfirmation.value;
-    /* Apenas para testar se está funcionando 
-    console.log(passwordValue);
-    */
+
     if(passwordConfirmationValue === ""){
         errorInput(passwordConfirmation, "Favor Inserir. Confirmação de Senha Obrigatória.")
     }else if(passwordConfirmationValue !== passwordValue){
@@ -161,6 +169,7 @@ function checkForm(){
     checkInputUsername();
     checkInputEmail();
     checkInputTelephone();
+    checkInputCEP();
     checkInputRG();
     checkInputCPF();
     checkInputPassword();
