@@ -15,19 +15,16 @@ function isValidNumber3(input) {
     return regex.test(input);
 }
 
-/*
-endereco
-numero-residencia
-complemento
-bairro
-municipio
-uf
-*/ 
-
 const form = document.getElementById("form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const telephone = document.getElementById("telephone");
+const endereco = document.getElementById("endereco");
+const numeroResidencia = document.getElementById("numero-residencia");
+const complemento = document.getElementById("complemento");
+const bairro = document.getElementById("bairro");
+const municipio = document.getElementById("municipio");
+const uf = document.getElementById("uf");
 const cep = document.getElementById("CEP");
 const rg = document.getElementById("RG");
 const cpf = document.getElementById("CPF");
