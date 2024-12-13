@@ -142,6 +142,17 @@ function checkInputEndereco(){
 
 }
 
+function checkInputNumeroResidencia(){
+    const numeroResidenciaValue = numeroResidencia.value;
+
+    if(isValidNumber4(numeroResidenciaValue) === false){
+        errorInput(numeroResidencia, "Favor Inserir o número de sua Residência Corretamente. Preenchimento Obrigatório.");
+    }else{
+        const formItem = numeroResidencia.parentElement;
+        formItem.className = "form-content";
+    }
+}
+
 function checkInputCEP(){
     const cepValue = cep.value;
 
