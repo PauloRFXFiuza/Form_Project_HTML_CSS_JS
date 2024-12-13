@@ -45,6 +45,27 @@ email.addEventListener("blur", () =>{
 telephone.addEventListener("blur", () =>{
     checkInputTelephone();
 })
+telephone.addEventListener("blur", () =>{
+    checkInputTelephone();
+})
+endereco.addEventListener("blur", () =>{
+    checkInputEndereco();
+})
+numeroResidencia.addEventListener("blur", () =>{
+    checkInputNumeroResidencia();
+})
+complemento.addEventListener("blur", () =>{
+    checkInputComplemento();
+})
+bairro.addEventListener("blur", () =>{
+    checkInputBairro();
+})
+municipio.addEventListener("blur", () =>{
+    checkInputMunicipio();
+})
+uf.addEventListener("blur", () =>{
+    checkInputUF();
+})
 cep.addEventListener("blur", () =>{
     checkInputCEP();
 })
@@ -102,6 +123,18 @@ function checkInputTelephone(){
         const formItem = telephone.parentElement;
         formItem.className = "form-content";
     }
+}
+
+function checkInputEndereco(){
+    const enderecoValue = endereco.value;
+
+    if(enderecoValue === ""){
+        errorInput(endereco, "Favor Inserir. Preenchimento Obrigatório.");
+    }else{
+        const formItem = endereco.parentElement;
+        formItem.className = "form-content";
+    }
+
 }
 
 function checkInputCEP(){
