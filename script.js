@@ -256,6 +256,11 @@ function checkForm(){
     checkInputUsername();
     checkInputEmail();
     checkInputTelephone();
+    checkInputEndereco();
+    checkInputNumeroResidencia();
+    checkInputBairro();
+    checkInputMunicipio();
+    checkInputUF();
     checkInputCEP();
     checkInputRG();
     checkInputCPF();
