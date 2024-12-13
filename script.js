@@ -286,6 +286,53 @@ function checkForm(){
     
 }
 
+/*
+5. Modificar o frontend para enviar dados
+Adicione uma chamada fetch no script.js para enviar os dados ao backend.
+*/
+
+function enviarFormulario() {
+    const dadosUsuario = {
+        nome_completo: username.value,
+        email: email.value,
+        telefone: telephone.value,
+        endereco: endereco.value,
+        numero_residencia: numeroResidencia.value,
+        complemento: complemento.value,
+        bairro: bairro.value,
+        municipio: municipio.value,
+        uf: uf.value,
+        cep: cep.value,
+        rg: rg.value,
+        cpf: cpf.value,
+        senha: password.value,
+    };
+
+    fetch("http://localhost:3000/cadastrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dadosUsuario),
+    })
+        .then((response) => {
+            if (response.ok) {
+                alert("Usuário cadastrado com sucesso!");
+            } else {
+                alert("Erro ao cadastrar usuário.");
+            }
+        })
+        .catch((error) => console.error("Erro:", error));
+}
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    checkForm();
+    if (form.querySelectorAll(".form-content.error").length === 0) {
+        enviarFormulario();
+    }
+});
+
 
 /* 
 Função errorInput
