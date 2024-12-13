@@ -15,6 +15,15 @@ function isValidNumber3(input) {
     return regex.test(input);
 }
 
+/*
+endereco
+numero-residencia
+complemento
+bairro
+municipio
+uf
+*/ 
+
 const form = document.getElementById("form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
